@@ -16,11 +16,13 @@ import { EmployeeDetailsComponent } from './mainContainer/employee-details/emplo
     AddEmpComponent,
     EditEmployeeComponent,
     EmployeeDetailsComponent,
-    AllEmployeesComponent
+    AllEmployeesComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

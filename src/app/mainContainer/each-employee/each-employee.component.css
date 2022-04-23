@@ -12,6 +12,22 @@ hits-button{
     display: flex;
     justify-content: space-around;
 }
+.name-gender-cont{
+    display: flex;
+    justify-content: space-between;
+
+}
+.male {
+    background-color: rgb(71, 158, 13);
+    width: 3vw;
+    height: 5vh;
+    border: none;
+    outline: none;
+    touch-action: none;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: bold;
+}
 .delete-button-container{
     display: flex;
     justify-content: center;

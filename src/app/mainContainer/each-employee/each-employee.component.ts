@@ -10,7 +10,7 @@ export class EachEmployeeComponent implements OnInit {
   @Input() public first :boolean;
   @Input() public last: boolean;
   @Input() public index: number;
-  @Input() public postDelete: EventEmitter<number>=new EventEmitter();
+  @Output() public postDelete: EventEmitter<number>=new EventEmitter();
 
   constructor() { }
 

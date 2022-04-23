@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { EmployeeService } from './mainContainer/employees.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'employee';
+  ob:Observable<number>;
+
+  constructor(){
+  }
 }

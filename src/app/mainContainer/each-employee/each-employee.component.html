@@ -1,12 +1,12 @@
 <div class="each-post">
-    <h2 [ngStyle]="(first || last) &&{'color': 'purple'}">{{emp.id+1}}.{{ emp.name }}
-        </h2>
-        <p>{{ emp.email }}</p>
-        <div class="buttons-cont">
-            <p class="hits-button">{{ emp.phone_number}}</p>
-            <p class="hits-button">{{ emp.designation }}</p>
-        </div>
+    <div class="name-gender-cont">
+    <h2 [ngStyle]="(first || last) &&{'color': 'purple'}">Emp Name:{{ emp.name |  uppercase }}</h2>
+    <button class="male">{{emp.gender.slice(0,1)}}</button> 
+    </div>
+        <p>Email: {{ emp.email }}</p>
+            <p class="hits-button">Ph.No: {{ emp.phone_number}}</p>
+            <p class="hits-button">designation{{ emp.designation }}</p>
         <div class="delete-button-container">
-            <button class="delete-button" (click)="handleDelete()">DELETE POST</button>
+            <button class="delete-button" (click)="handleDelete()">Discard Employee</button>
         </div>
     </div>
