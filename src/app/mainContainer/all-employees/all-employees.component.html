@@ -1,0 +1,16 @@
+<h2 class="title">Facebook Posts</h2>
+<div class="posts-container">
+    <p [ngStyle]="notFoundStyle()"
+    *ngIf="employees.length === 0; else lessPosts">No record found</p>
+    <ng-template #lessPosts>
+        <app-each-employee
+        *ngFor="let emp of employees;index as i;first as first; last as last; odd as odd; even as even"
+        [ngClass]="even ? 'even-cont': 'odd-cont'"
+        [emp]="emp"
+        (postDelete)="handleDeletePost($event)"
+        [first]="first"
+        [last]="last"
+        [index]="i"
+        ></app-each-employee>
+    </ng-template>
+</div> 

@@ -1,0 +1,30 @@
+.title{
+    text-align: center;
+    font-size: 42px;
+    background-color: #4267B2;
+    color:aliceblue;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.posts-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.even-cont{
+    background-color: darkgray;
+    width: 30%;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.odd-cont{
+    background-color: rgb(163, 125, 125);
+    width: 30%;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+.not-found-img{
+    width: 20vw;
+    height: 30vh;
+}

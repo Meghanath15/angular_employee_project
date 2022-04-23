@@ -1,0 +1,12 @@
+<div class="each-post">
+    <h2 [ngStyle]="(first || last) &&{'color': 'purple'}">{{emp.id+1}}.{{ emp.name }}
+        </h2>
+        <p>{{ emp.email }}</p>
+        <div class="buttons-cont">
+            <p class="hits-button">{{ emp.phone_number}}</p>
+            <p class="hits-button">{{ emp.designation }}</p>
+        </div>
+        <div class="delete-button-container">
+            <button class="delete-button" (click)="handleDelete()">DELETE POST</button>
+        </div>
+    </div>
