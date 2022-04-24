@@ -1,0 +1,71 @@
+<div>
+    <form class="user-add-form" (ngSubmit)="handleSubmit($event)" [formGroup]="employeeForm">
+        <fieldset class="fieldset">
+          <legend class="legend">Enter Employee details</legend>
+          <div class="input-group">
+            <label for="name" class="input-label">Emp name</label>
+            <input
+              type="text"
+              class="input-control"
+              name="name"
+              placeholder="user name here"
+              id="name"
+              formControlName="name"
+            />
+            <p *ngIf="employeeForm.get('name').invalid && employeeForm.get('name').dirty" class="input-errors">*EMP name is required</p>
+          </div>
+          <div class="input-group">
+            <label for="phone_number" class="input-label">Phone_No</label>
+            <input
+              type="name"
+              min="1"
+              max="99"
+              class="input-control"
+              name="phone_number"
+              placeholder="Emp PhoneNo here"
+              id="phone_number"
+              formControlName="phone_number"
+            />
+          </div>
+          <div class="input-group">
+            <label for="email" class="input-label">Email</label>
+            <textarea
+              class="input-control"
+              name="email"
+              placeholder="emp email"
+              id="email"
+              rows="3"
+              formControlName="email"
+            ></textarea>
+          </div>
+          <div class="input-group">
+            <label for="gender" class="input-label">Gender</label>
+            <select
+              class="input-control"
+              name="gender"
+              id="gender"
+              formControlName="gender"
+            >
+              <option value="undefined" disabled selected>Select a gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="prefernottoshare">Prefer not to share</option>
+            </select>
+          </div>
+          <div class="input-group align-center">
+            <button type="submit" class="btn btn-danger" [disabled]="employeeForm.invalid">Submit</button>
+            <!-- <button type="button" class="btn" (click)="handleClear()">Clear</button> -->
+    
+        </div>
+        </fieldset>
+      </form>
+    <!-- <div class="main-display-cont">
+        <div class = "display-container" *ngFor="let user of users">
+        <h3>{{user.name}}</h3>
+        <p>{{user.age}}</p>
+        <p>{{user.bio}}</p>
+        <p>{{user.gender}}</p>
+        <button type="button" class="clear-btn" (click)="handleRemove($event)">Remove</button>
+    </div> 
+    </div>-->
+</div>

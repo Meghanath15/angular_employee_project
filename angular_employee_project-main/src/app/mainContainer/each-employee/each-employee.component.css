@@ -1,0 +1,47 @@
+hits-button{
+    background-color:rgb(218, 205, 84);
+    color: rgb(7, 12, 58);
+    width: 60px;
+    height: 40px;
+    font-size: 20px;
+    padding: auto;
+    text-align: center;
+    cursor: pointer;
+}
+.buttons-cont{
+    display: flex;
+    justify-content: space-around;
+}
+.name-gender-cont{
+    display: flex;
+    justify-content: space-between;
+
+}
+.male {
+    background-color: rgb(71, 158, 13);
+    width: 3vw;
+    height: 5vh;
+    border: none;
+    outline: none;
+    touch-action: none;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.delete-button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.delete-button{
+    background-color:#d11a2a;
+    color: azure;
+    width: 30vh;
+    margin-top: 20px;
+    height: 5vh;
+    border: 0px;
+    border-radius: 14px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+} 

@@ -12,7 +12,6 @@ export class BestEmployeesComponent implements OnInit {
   constructor(private bestService: BestEmployeesService) { }
 
   ngOnInit(): void {
-    this.bestEmps=this.bestService.getEmployees();
   }
    
   getBestEmployees(){
