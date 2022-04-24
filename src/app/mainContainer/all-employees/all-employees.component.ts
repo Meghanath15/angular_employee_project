@@ -1,6 +1,8 @@
 import { Component, OnInit,Output } from '@angular/core';
 import { EmployeeType } from '../type/employee.type';
-
+import { FormControl,Validators,FormGroup, FormBuilder} from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { BestEmployeesService } from '../best-employees/best-employee.service';
 @Component({
   selector: 'app-all-employees',
   templateUrl: './all-employees.component.html',
@@ -19,14 +21,48 @@ export class AllEmployeesComponent implements OnInit {
      {"id":9,"username":"dewitt.walker","name":"Prof. Mikel Marvin","email":"amie.hettinger@example.com","gender":"Male","designation":"Full Stack Developer","phone_number":"251.728.3907","complete_address":"7416 Solon Center\nWhitetown, GA 26640-5188"},
      {"id":10,"username":"hayes.anahi","name":"Dr. Pattie Denesik","email":"hokuneva@example.com","gender":"Male","designation":"Full Stack Developer","phone_number":"1-650-931-7426","complete_address":"84480 Wiley Harbor\nZoeberg, ID 95980-1064"}
    ];
+   
+   employeeForm: FormGroup;
 
-   constructor(){}
+   constructor(private formbuilder:FormBuilder, private bestEmpService: BestEmployeesService){
+    this.createEmployeeForm();
+   }
+  //   this.employeeForm = new FormGroup({
+  //     id: new FormControl(this.generateARandomId(), Validators.required),
+  //     name: new FormControl('', Validators.required),
+  //     phone_number: new FormControl(null, [
+  //       Validators.required,
+  //     ]),
+  //     desgination: new FormControl('', Validators.required),
+  //     gender: new FormControl('', Validators.required),
+  //   });
+  //   console.log(this.employeeForm);
+  //   this.employeeForm.get('name').valueChanges.subscribe(value => {})
+  // }
+
+   
+
+   createEmployeeForm(){
+     this.employeeForm=this.formbuilder.group({
+       id:[this.generateARandomId(),Validators.required],
+       name:["",Validators.required],
+       phone_number:["", [Validators.required]],
+       designation:["",Validators.required],
+       gender: ["",Validators.required],
+     })
+
+     this.employeeForm.get("name").valueChanges.subscribe(value=>{});
+   }
 
    ngOnInit(): void {}
 
    handleDeletePost(id: number) {
     console.log(id);
     this.employees = this.employees.filter((emp) => emp.id!== id);
+  }
+
+  handleAddEmp(emp:EmployeeType){
+    this.bestEmpService.addItem(emp);
   }
 
   notFoundStyle():Object{
@@ -37,5 +73,27 @@ export class AllEmployeesComponent implements OnInit {
   'margin':'auto',
   'text-align':'center'};
 
+  }
+  
+
+ handleSubmit(event: MouseEvent) {
+   if(!this.employeeForm.invalid){
+    console.log('Invalid name value');
+    return;
+  }
+  this.employees.push({
+    ...this.employeeForm.value,
+  });
+
+  console.log(this.employees)
+
+ }
+
+ 
+
+  generateARandomId(min: number = 1000, max: number = 9999) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
   }
 }

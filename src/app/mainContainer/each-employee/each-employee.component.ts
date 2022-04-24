@@ -11,6 +11,7 @@ export class EachEmployeeComponent implements OnInit {
   @Input() public last: boolean;
   @Input() public index: number;
   @Output() public postDelete: EventEmitter<number>=new EventEmitter();
+  @Output() public postAdd: EventEmitter<number>=new EventEmitter();
 
   constructor() { }
 
@@ -18,6 +19,10 @@ export class EachEmployeeComponent implements OnInit {
   }
   handleDelete() {
     this.postDelete.emit(this.emp.id);
+  }
+
+  handleAdd(){
+    this.postAdd.emit (this.emp)
   }
 
 }

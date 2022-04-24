@@ -5,8 +5,9 @@
     </div>
         <p>Email: {{ emp.email }}</p>
             <p class="hits-button">Ph.No: {{ emp.phone_number}}</p>
-            <p class="hits-button">designation{{ emp.designation }}</p>
+            <p class="hits-button">designation: {{ emp.designation }}</p>
         <div class="delete-button-container">
+            <button class="btn btn-accent" (click)="handleAdd()">Promote</button>
             <button class="delete-button" (click)="handleDelete()">Discard Employee</button>
         </div>
     </div>

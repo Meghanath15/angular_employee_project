@@ -1,0 +1,9 @@
+<div class="cart">
+    <button class="btn btn-primary" (click)="getBestEmployees()">Best Employees of the Year</button>
+
+    <div class="cart-items">
+        <div class="cart-item" *ngFor="let emp of bestEmps">
+            <h3>{{emp.name}} | <small>{{emp.designation}}</small></h3>
+        </div>
+    </div>
+</div>
