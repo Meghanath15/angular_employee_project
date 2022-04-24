@@ -1,78 +1,8 @@
-<div>
-   <app-best-employees></app-best-employees>
-</div>
-<app-all-employees></app-all-employees>
-<!---------------------------------------------------------------->
-<!--
-<form class="user-add-form">
-    <fieldset class="fieldset">
-      <legend class="legend">Enter new user details</legend>
-      <div class="input-group">
-        <label for="name" class="input-label">User name</label>
-        <input
-          type="text"
-          class="input-control"
-          name="name"
-          placeholder="user name here"
-          id="name"
-          [(ngModel)]="name"
-          (keyup)="handleKeyUp($event)"
-        />
-        <p *ngIf="titleErrors" class="input-errors">{{titleErrors}}</p>
-      </div>
-      <div class="input-group">
-        <label for="age" class="input-label">User AGE</label>
-        <input
-          type="number"
-          min="1"
-          max="99"
-          class="input-control"
-          name="age"
-          placeholder="user age here"
-          id="age"
-          [(ngModel)]="age"
-        />
-      </div>
-      <div class="input-group">
-        <label for="bio" class="input-label">User BIO</label>
-        <textarea
-          class="input-control"
-          name="bio"
-          placeholder="user bio here"
-          id="bio"
-          rows="3"
-          [(ngModel)]="bio"
-        ></textarea>
-      </div>
-      <div class="input-group">
-        <label for="gender" class="input-label">user gender</label>
-        <select
-          class="input-control"
-          name="gender"
-          id="gender"
-          [(ngModel)]="gender"
-        >
-          <option value="undefined" disabled selected>Select a gender</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-          <option value="prefernottoshare">Prefer not to share</option>
-        </select>
-      </div>
-      <div class="input-group align-center">
-        <button type="submit" class="btn btn-danger" (click)="handleSubmit()">Submit</button>
-        <button type="button" class="btn" (click)="handleClear()">Clear</button>
 
-    </div>
-    </fieldset>
-  </form>
-<div class="main-display-cont">
-    <div class = "display-container" *ngFor="let user of users">
-    <h3>{{user.name}}</h3>
-    <p>{{user.age}}</p>
-    <p>{{user.bio}}</p>
-    <p>{{user.gender}}</p>
-    <button type="button" class="clear-btn" (click)="handleRemove($event)">Remove</button>
-</div>
-</div>
--->
+<menu type="toolbar" class="menubar container">
+  <li><a routerLink="/">Home</a></li>
+  <li><a routerLink="employees">ALL Employees</a></li>
+  <li><a routerLink="bestEmployees">BEST Employees</a></li>
 
+</menu>
+<router-outlet></router-outlet>

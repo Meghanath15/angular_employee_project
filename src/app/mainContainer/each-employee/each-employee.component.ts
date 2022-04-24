@@ -1,5 +1,7 @@
 import { Component, Input, OnInit,Output, EventEmitter } from '@angular/core';
 import { EmployeeType } from '../type/employee.type';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-each-employee',
   templateUrl: './each-employee.component.html',
@@ -10,19 +12,23 @@ export class EachEmployeeComponent implements OnInit {
   @Input() public first :boolean;
   @Input() public last: boolean;
   @Input() public index: number;
-  @Output() public postDelete: EventEmitter<number>=new EventEmitter();
-  @Output() public postAdd: EventEmitter<number>=new EventEmitter();
+  @Output() public empDelete: EventEmitter<number>=new EventEmitter();
+  @Output() public empAdd: EventEmitter<EmployeeType>=new EventEmitter();
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
   handleDelete() {
-    this.postDelete.emit(this.emp.id);
+    this.empDelete.emit(this.emp.id);
   }
 
   handleAdd(){
-    this.postAdd.emit (this.emp)
+    this.empAdd.emit (this.emp);
+  }
+
+  handleExpand(){
+    this.router.navigateByUrl(`/employees/${this.emp.id}`,{})
   }
 
 }
